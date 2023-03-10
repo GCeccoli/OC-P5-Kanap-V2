@@ -14,7 +14,7 @@ fetch("http://localhost:3000/api/products")
                  .getElementById("items")
                  // On intégre les données dans le fichier HTML
                  .insertAdjacentHTML("beforeend", //Aligne les éléments convenablement
-                 `<a href="./product.html?id=${products.id}">
+                 `<a href="./product.html?id=${products._id}">
                      <article>
                        <img src="${products.imageUrl}" alt="${products.altTxt}">
                        <h3 class="productName">${products.name} </h3>
@@ -23,8 +23,6 @@ fetch("http://localhost:3000/api/products")
                    </a>`)
              })  
          })
-        } else {
-            alert("La requète a échouée")
         }
     })
     .catch((error) => {
